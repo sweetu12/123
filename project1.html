@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="3D Printed Custom Chess Piece - Sitanshu's Portfolio">
     <title>3D Printed Custom Chess Piece</title>
-    <link rel="stylesheet" href="style.css"> <!-- Use the same CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.jpg" type="image/jpg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar (Same as index.html) -->
     <header>
         <nav>
-            <ul>
+            <div class="logo">
+                <a href="index.html#hero"><img src="images/favicon.jpg" alt="Logo" /></a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="index.html#hero">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#skills">Skills</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
     <!-- Project Detail Section -->
     <section id="project-details">
         <h2>3D Printed Custom Chess Piece</h2>
-        <p>This project involves designing and 3D printing a custom chess piece using SolidWorks and FDM 3D printing technology.</p>
-
-        <!-- Images or Videos of the Project -->
         <div class="project-media">
             <img src="images/project1-1.jpg" alt="Chess Piece Design">
             <img src="images/project1-2.jpg" alt="Chess Piece Printing Process">
@@ -36,17 +43,26 @@
             </video>
         </div>
 
-        <!-- More Project Information -->
-        <h3>Project Overview</h3>
-        <p>The project aimed to create a custom chess piece that was both aesthetically pleasing and functional. We used SolidWorks for the design and an FDM printer for the actual production. The goal was to experiment with design optimization for strength and material usage.</p>
+        <div class="project-description">
+            <h3>Project Overview</h3>
+            <p>This project involves designing and 3D printing a custom chess piece using SolidWorks and FDM 3D printing technology. The goal was to create an aesthetically pleasing and functional piece, optimizing design for strength and material usage.</p>
 
-        <h3>Design and Manufacturing Process</h3>
-        <p>Details about the design process, software tools, and challenges encountered during manufacturing...</p>
+            <h3>Design and Manufacturing Process</h3>
+            <p>The design process started with conceptual sketches, followed by detailed modeling in SolidWorks. Challenges included ensuring structural integrity while minimizing material usage. The final design was 3D printed using an FDM printer, achieving the desired balance between aesthetics and functionality.</p>
+        </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (Same as index.html) -->
     <footer>
+        <div class="social-links">
+            <a href="https://github.com/sweetu12" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/sitanshu12" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <!-- Add more social links here -->
+        </div>
         <p>&copy; 2024 Sitanshu</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
