@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Sitanshu's Portfolio - Mechanical Engineering Senior | Robotics | Automation | Mechanical Design">
     <title>Sitanshu's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.jpg" type="image/jpg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- Back-to-Top Button -->
+    <button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
 
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <ul>
+            <div class="logo">
+                <a href="#hero"><img src="images/favicon.jpg" alt="Logo" /></a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
@@ -25,8 +40,19 @@
     <section id="hero">
         <div class="hero-content">
             <h1>Hi, I'm Sitanshu</h1>
-            <p>Mechanical Engineering Student | Robotics Enthusiast | Designer</p>
+            <p>Mechanical Engineering Senior | Robotics | Automation | Mechanical Design</p>
             <a href="#projects" class="btn">See My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="images/project1-1.jpg" alt="About Image">
+            <div class="about-text">
+                <p>Welcome to my portfolio. I am a Mechanical Engineering student specializing in automation, robotics, and mechanical design. I am passionate about creating innovative solutions and continuously improving my skills.</p>
+            </div>
         </div>
     </section>
 
@@ -34,10 +60,30 @@
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills-grid">
-            <div class="skill-item">SolidWorks</div>
-            <div class="skill-item">MATLAB</div>
-            <div class="skill-item">Python</div>
-            <div class="skill-item">AutoCAD</div>
+            <div class="skill-item">
+                <h3>SolidWorks</h3>
+                <div class="progress-bar">
+                    <div class="progress solidworks"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>MATLAB</h3>
+                <div class="progress-bar">
+                    <div class="progress matlab"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>Python</h3>
+                <div class="progress-bar">
+                    <div class="progress python"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>AutoCAD</h3>
+                <div class="progress-bar">
+                    <div class="progress autocad"></div>
+                </div>
+            </div>
             <!-- Add more skills here -->
         </div>
     </section>
@@ -58,7 +104,7 @@
                     </div>
                 </a>
             </div>
-    
+
             <!-- Project 2: Video with hover effect -->
             <div class="project-card">
                 <a href="project2.html">
@@ -74,27 +120,33 @@
                     </div>
                 </a>
             </div>
+            <!-- Add more projects here -->
         </div>
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <form action="https://formspree.io/f/xdknrwzy" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/xdknrwzy" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
+            <p id="status-message"></p> <!-- To show success/error message -->
         </form>
     </section>
 
-
     <!-- Footer -->
     <footer>
+        <div class="social-links">
+            <a href="https://github.com/sweetu12" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/sitanshu12" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <!-- Add more social links here -->
+        </div>
         <p>&copy; 2024 Sitanshu</p>
     </footer>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
