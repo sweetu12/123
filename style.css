@@ -124,6 +124,42 @@ nav ul li a:hover {
     transform: translateY(-10px);
 }
 
+/* Project Card Basic Styles */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.project-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease; /* Smooth transition for zoom */
+}
+
+/* Zoom Effect on Hover */
+.project-card:hover .zoom-img {
+    transform: scale(1.1); /* Zoom image */
+}
+
+/* Project Video Basic Styles */
+.project-media video {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.5s ease;
+    opacity: 0; /* Initially hide video */
+}
+
+/* When the user hovers over the card, show the video */
+.project-card:hover .hover-video {
+    opacity: 1; /* Make video visible */
+}
+
+
 /* Contact Section */
 #contact {
     background-color: #333;
