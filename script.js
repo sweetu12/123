@@ -1,28 +1,98 @@
-// Smooth scroll for navigation links
+// Menu Button Toggle
+const menuButton = document.querySelector('.menu-button');
+const navLinks = document.querySelector('.nav-links');
+
+menuButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        if (this.getAttribute('href') !== "#") {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            // Close the menu if it's open (for mobile)
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        }
     });
 });
-// Select all project cards that contain videos
+
+// Scrollspy - Highlight current section in navbar
+const sections = document.querySelectorAll('section');
+const navItems = document.querySelectorAll('.nav-links li a');
+
+window.addEventListener('scroll', () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navItems.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+
+    // Back-to-Top Button Visibility
+    const backToTop = document.getElementById('back-to-top');
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+// Back-to-Top Button Functionality
+const backToTopButton = document.getElementById('back-to-top');
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Autoplay Video on Hover
 const projectCards = document.querySelectorAll('.project-card');
 
 projectCards.forEach((card) => {
-    const video = card.querySelector('video'); // Get the video element
+    const video = card.querySelector('video');
 
     if (video) {
-        // Play the video on mouse enter (hover)
         card.addEventListener('mouseenter', () => {
             video.play();
         });
 
-        // Pause the video when the mouse leaves
         card.addEventListener('mouseleave', () => {
             video.pause();
-            video.currentTime = 0; // Reset video to the start
+            video.currentTime = 0;
+        });
+    }
+});
+
+// Animate Skills Progress Bars on Scroll
+const skillsSection = document.getElementById('skills');
+const progressBars = document.querySelectorAll('.progress');
+
+window.addEventListener('scroll', () => {
+    const skillsTop = skillsSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (skillsTop < windowHeight - 100) {
+        progressBars.forEach(bar => {
+            bar.style.width = bar.classList.contains('solidworks') ? '90%' :
+                              bar.classList.contains('matlab') ? '80%' :
+                              bar.classList.contains('python') ? '85%' :
+                              bar.classList.contains('autocad') ? '75%' : '0%';
         });
     }
 });
