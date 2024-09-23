@@ -112,53 +112,76 @@ nav ul li a:hover {
     gap: 20px;
 }
 
-.project-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-/* Project Card Basic Styles */
+/* Project Card with Hover Effects */
 .project-card {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 300px; /* Set a fixed height for the card */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 30px;
 }
 
-.project-media img {
+/* Media inside the project card */
+.project-media {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease; /* Smooth transition for zoom */
+    height: 100%;
+    overflow: hidden;
 }
 
-/* Zoom Effect on Hover */
-.project-card:hover .zoom-img {
-    transform: scale(1.1); /* Zoom image */
-}
-
-/* Project Video Basic Styles */
+.project-media img,
 .project-media video {
     width: 100%;
-    height: auto;
-    display: block;
-    transition: opacity 0.5s ease;
-    opacity: 0; /* Initially hide video */
+    height: 100%;
+    object-fit: cover; /* Image/Video fills the card */
+    opacity: 0.7; /* Slightly opaque by default */
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* When the user hovers over the card, show the video */
-.project-card:hover .hover-video {
-    opacity: 1; /* Make video visible */
+/* Project Info Styling */
+.project-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    transition: all 0.5s ease;
 }
 
+.project-info h3 {
+    font-size: 24px; /* Increase font size */
+    margin: 0;
+}
+
+.project-info p {
+    font-size: 18px; /* Increase font size */
+    margin: 0;
+}
+
+/* Remove blue hyperlink styling */
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+/* Hover Effect for Project Card */
+.project-card:hover .project-media img,
+.project-card:hover .project-media video {
+    opacity: 1; /* Fully visible on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.project-card:hover .project-info {
+    top: 90%; /* Move text to the bottom on hover */
+    transform: translate(-50%, -10%);
+}
 
 /* Contact Section */
 #contact {
@@ -202,7 +225,8 @@ nav ul li a:hover {
     padding: 50px 20px;
 }
 
-.project-media img, .project-media video {
+.project-media img, 
+.project-media video {
     max-width: 100%;
     margin-bottom: 20px;
 }
