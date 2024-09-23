@@ -161,6 +161,32 @@ nav ul li a:hover {
     background-color: #ff6347;
 }
 
+/* Project Details Page Styling */
+#project-details {
+    padding: 50px 20px;
+}
+
+.project-media img, .project-media video {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.project-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-media img {
+    max-width: 500px; /* Limit the image size */
+}
+
+.project-media video {
+    max-width: 600px; /* Limit the video size */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
 /* Footer */
 footer {
     background-color: #333;
