@@ -54,12 +54,22 @@ window.addEventListener('scroll', () => {
 
 // Back-to-Top Button Functionality
 const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.style.display = "block"; // Show button when scrolled down
+    } else {
+        backToTopButton.style.display = "none"; // Hide button when at the top
+    }
+});
+
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth' // Smooth scroll to top
     });
 });
+
 
 // Autoplay Video on Hover
 const projectCards = document.querySelectorAll('.project-card');
